@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/portfolio.png" type="image/x-icon">
+  <title>Welcome</title>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=AR+One+Sans&family=IBM+Plex+Sans+Condensed&family=IBM+Plex+Sans:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.production.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <!-- dark mode wrapping -->
+  <input id="switch-input" class="switch slider round" type="checkbox" name="switch-input" checked>
+  <label class="switch" for="switch-input">dark mode
+    <span class="slider round"></span>
+  </label>
+  <br>
+  <div class="color-scheme-wrapper">
+
+    <!-- Header including the logo and the main navigation -->
+    <header class="page-header">
+      <img class="icon navigation__logo page-header__item" src="img/nameLogo.svg" alt="Logo from name">
+      <nav class="main-navigation page-header__item">
+        <ul role="menubar" class="navigation-list">
+          <li role="presentation" class="highlight">
+            <a role="menuitem" class="highlight navigation-list__item" href="index.html">Home</a>
+          </li>
+          <li role="presentation" class="highlight">
+            <a role="menuitem" class="highlight navigation-list__item" href="about.html">About</a>
+          </li>
+          <li role="presentation" class="highlight">
+            <a role="menuitem" class="highlight navigation-list__item navigation-list__item--active"
+              href="work.html">Work</a>
+          </li>
+          <li role="presentation" class="highlight">
+            <a role="menuitem" class="highlight navigation-list__item" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Main content -->
+      <section>
+        <h1>Work</h1>
+        <div class="project-list">
+          <!-- project-list items will live here -->
+          <!-- Each child containers should be able to hold
+            title of a project, short description, and link to project (e.g., a link to GitHub) -->
+          <div class="project-list__item">
+            <h2>C# - Collection: Event Handling & Email Notification</h2>
+            <p>
+              An exercise to practice creating and subscribing to events. A Gmail-account has been created to send and
+              receive information from the program about the events
+            </p>
+            <a class="project-link"
+            target=”_blank” href="https://github.com/Computational-Design-Consulting/CSharp-Collection/tree/mainCDC/Own%20examples%20and%20Ideas/EventHandling_Email">See
+              project on GitHub</a>
+          </div>
+          <div class="project-list__item">
+            <h2>C# - Collection: Email Notification Extension</h2>
+            <p>
+              In this project extension, I ported the project(/solution) to .Net Core, refactored classes into Library,
+              used asynchronous methods/ events and added unit testing.
+            </p>
+            <a class="project-link" target=”_blank” href="https://github.com/Computational-Design-Consulting/CSharp-Collection/tree/mainCDC/Own%20examples%20and%20Ideas/EventMailEx">See project on GitHub</a>
+          </div>
+          <div class="project-list__item">
+            <h2>C# - Collection: Graph Project with MVC Pattern</h2>
+            <p>
+              Within this take home interview assignment, I built a small console application in .Net core creating
+              and manipulating undirected graph.
+            </p>
+            <a class="project-link" target=”_blank” href="https://github.com/Computational-Design-Consulting/CSharp-Collection/blob/mainCDC/Solving%20Tasks/GraphProject/images/ClassDiagram_final.png">See project on GitHub</a>
+          </div>
+          <div class="project-list__item">
+            <h2>C# - Collection: File System Watcher</h2>
+            <p>
+              This Program watches a folder for content changes. Created as an exercise, I am now working on a file
+              management and backup program, that utilizes this behavior.
+            </p>
+            <a class="project-link" target=”_blank” href="https://github.com/Computational-Design-Consulting/CSharp-Collection/tree/mainCDC/Exercises/FileSystemWatcher/">See project on GitHub</a>
+          </div>
+          <div class="project-list__item">
+            <h2>C# - Collection: Polymorphism</h2>
+            <p>
+              As part of my early studies, I added an extensive reminder of how overriding and overloading work for
+              future reference.
+            </p>
+            <a class="project-link"
+            target=”_blank” href="https://github.com/Computational-Design-Consulting/CSharp-Collection/tree/mainCDC/Own%20examples%20and%20Ideas/PolymorphismExample">See
+              project on GitHub</a>
+          </div>
+          <div class="project-list__item">
+            <h2>Community Project: Brain Plugin</h2>
+            <p>
+              In this plugin to access AI APIs from Grasshopper, a project by the ParametricCamp community, I am
+              actively collaborating. So far I created a one-pager
+              about the update cycle and Async behavior in GH and scripted a custom json parser to output jSwan's nested
+              JSON objects as flat list of outputs in dot notation
+            </p>
+            <a class="project-link"
+            target=”_blank” href="https://github.com/ParametricCamp/brain-plugin-grasshopper/commit/7b2ff77491a88c2b3260df76901148eb1dab8413">See
+              project on GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>Find me on</p>
+      <div class="social-media">
+        <a href="#"><img class="icon" src="img/github.svg" alt="github" height="30"></a>
+        <a href="#"><img class="icon" src="img/twitter.svg" alt="twitter" height="30"></a>
+        <a href="#"><img class="icon" src="img/linkedin.svg" alt="linkedin" height="30"></a>
+      </div>
+    </footer>
+
+    <!-- screen reader accessability tool: -->
+    <script src="js/tota11y.js"></script>
+    <script src="js/tota11y.min.js"></script>
+
+    <!-- end div for dark mode:   -->
+  </div>
+</body>
+
+</html>

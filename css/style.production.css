@@ -1,0 +1,738 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 2 version
+*/
+
+/*
+ typography
+ https://www.fontpair.co/pairings/ibm-plex-sans-condensed-ibm-plex-sans
+ https://fonts.google.com
+ */
+ /* section: main constants and variables */
+ :root {
+  /* constants: */
+  --text-color-light: #BE47FD;
+  --text-color: #7728b0e9;
+  --primary-color: #030531;
+  --primary-color: #0f1132;
+  --secondary-color: #e7e7e7da;
+  --lighting-color-dark: #3f8adb;
+  --lighting-color: #00fff7b9;
+  --link-color: #2a3199;
+  --link-color-light: #4486d1;
+
+  /* light mode */
+  /* variables: */
+  --background: var(--secondary-color);
+  --color: var(--primary-color);
+  --accent: var(--text-color);
+  --lighting: var(--lighting-color);
+  --links: var(--link-color);
+  --nav-links: var(--lighting-color-dark); 
+  --switch: var(--primary-color);
+  --input-color: var(--background);
+  }
+/* end section */
+/* section: elements */
+  * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  body {
+    font-family:
+    'IBM Plex Sans Condensed',
+    'IBM Plex Sans',
+    sans-serif;
+    font-family:
+    Helvetica, Arial, sans-serif, sans-serif;
+    background-color: #e7e7e7da;
+    background-color: var(--background);
+  }
+  h1, h2, h3, p, section, details, a{
+    padding-left: 10px;
+  }
+  h1 {
+    font-family: 'IBM Plex Sans Condensed';
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  p {
+    font-family: 'IBM Plex Sans';
+    font-size: 16px;
+    line-height: 1.2;
+    padding-left: 10px;
+  }
+  table{
+    font-size: 12px;
+  }
+/* end section */
+/* section: element properties */
+  a:link {
+    color: #2a3199;
+    color: var(--links);
+  }
+  a:visited {
+    color: undefined;
+    color: var(--links-visited);
+  }
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+  a:active {
+    color: #00fff7b9;
+    color: var(--lighting);
+  }
+/* end section */
+/* section: classes */
+/* section: page */
+  .page-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-header__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 200px;
+            flex: 0 1 200px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .page-header__item:last-child {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: right;
+  }
+  .page-footer {
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+/* end section */
+/* section: nav */
+  .navigation__logo {
+    position: relative;
+    height: 200px;
+  }
+  .navigation-list {
+    list-style-type: none;
+  }
+  .navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+/* end section */
+/* section inputs */
+  input {
+    background: #0f1132;
+    background: var(--input-color);
+  }
+  textarea {
+    background: #0f1132;
+    background: var(--input-color);
+  }
+  select {
+    background: #0f1132;
+    background: var(--input-color);
+  }
+/* end section */
+/* buttons in and outside of forms */
+  .button {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: #7728b0e9;
+    background-color: var(--text-color);
+    color: #e7e7e7da;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 30px;
+    display: inline-block; /* overwrites browser defaults */
+    /* Transition picked up by hover state */
+    /* TODO: check: "transition-duration: 0.2s opacity;" won't work, bug? */
+    -webkit-transition-duration: 0.92s;
+            transition-duration: 0.92s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: cubic-bezier(0, 0.54, 0.4, 0.11);
+            transition-timing-function: cubic-bezier(0, 0.54, 0.4, 0.11); /* visual editor in dev-tools ;) */
+  }
+  button {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: #7728b0e9;
+    background-color: var(--text-color);
+    color: #e7e7e7da;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 30px;
+    display: inline-block; /* overwrites browser defaults */
+    /* Transition picked up by hover state */
+    /* TODO: check: "transition-duration: 0.2s opacity;" won't work, bug? */
+    -webkit-transition-duration: 0.92s;
+            transition-duration: 0.92s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: cubic-bezier(0, 0.54, 0.4, 0.11);
+            transition-timing-function: cubic-bezier(0, 0.54, 0.4, 0.11); /* visual editor in dev-tools ;) */
+  }
+  button:visited{
+    color: #e7e7e7da;
+    color: var(--secondary-color)
+  }
+  .button:visited{
+    color: #e7e7e7da;
+    color: var(--secondary-color)
+  }
+  .button:hover, .button:focus,
+  button:hover, button:focus {
+    cursor: pointer; /* lets the mouse appear as a hand when hovering over the button */
+    opacity: 0.8; /* reduces the opacity of the button to 80% */
+  }
+  /* button in anchor (link) */
+  .button{
+    margin: 20px;
+  }
+/* end section */  
+/* section: home/index page profile & image */
+  .profile__portrait {
+    float: left;
+    width: 250px;
+    margin: 0 40px;
+    border-radius: 50%;
+  }
+  .profile {
+    min-width: 700px;
+    margin: 0 auto;
+  }
+/* end section: home/index page profile & image */    
+/* section: work page grid */
+  /* start grid fallback */
+    .project-list__item {
+      display: inline-block;
+      width: 33%;
+      padding: 10px;
+      margin: 20px;
+    }
+  /* end grid fallback */  
+  @supports (display: grid) {
+    .project-list {
+      display: -ms-grid;
+      display: grid;
+      /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
+      -ms-grid-columns: 1fr 15px 1fr 15px 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 15px;
+      padding: 10px;
+    }
+    .project-list__item {
+      /* background-color: lightgray;  */
+      width: auto;
+      min-height: auto;
+      margin: 0;
+    }
+    .project-list__item:last-child {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 2;
+      grid-column: 1 / 3;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 2;
+      grid-row: 1 / 3;
+    }
+  }
+/* end section: work page grid */
+/* end section: classes */
+
+/* section id */
+/* section: about page white spacing */
+  #intro-new, #dev-path, #cooking{
+    margin-top: 80px;
+  }
+  #prelude, #msc-study, #msc-work, #coding, #comdecon, #iass, #software-dev, #software-dev{
+    margin-top: 40px;
+  }
+/* end section: about page white spacing */
+/* reversing indent for cascaded table on about page*/
+  #work-experience__other{
+    padding-left: 0px;
+  }
+/* end section: reversing indent */
+
+/* section: dark mode: (change only when preceded by ".color-scheme-wrapper") */
+  #switch-input:checked~.color-scheme-wrapper {
+    --background: var(--primary-color);
+    --color: var(--secondary-color);
+    --accent: var(--lighting-color);
+    --lighting: var(--text-color-light);
+    --links: var(--link-color-light);
+    --links-visited: var(--lighting-color-dark);
+    --nav-links: var(--lighting-color); 
+    --switch: var(--secondary-color);
+    --filter: invert(100%);
+  }
+/* end section: dark mode */
+/* end section */
+/* section: element class attribute variables assignment */
+.color-scheme-wrapper {
+  min-height: 100vh;
+  background-color: #e7e7e7da;
+  background-color: var(--background);
+  background: #e7e7e7da;
+  background: var(--background);
+  color: #0f1132;
+  color: var(--color);
+  accent-color: #7728b0e9;
+  accent-color: var(--accent);
+  lighting-color: #00fff7b9;
+  lighting-color: var(--lighting);
+  --switch-color: #0f1132;
+  --switch-color: var(--switch);
+}
+.color-scheme-wrapper .highlight{
+  color: #7728b0e9;
+  color: var(--accent);
+}
+.icon {
+  -webkit-filter: undefined;
+          filter: undefined;
+  -webkit-filter: var(--filter);
+          filter: var(--filter);
+}
+.switch{
+  color: undefined;
+  color: var(--switch-color);
+}
+.navigation-list__item--active {
+  text-decoration: none;
+}
+.project-list__item {
+  color: #e7e7e7da;
+  color: var(--background);
+  background: #0f1132;
+  background: var(--color);
+}
+a.project-link:link{
+  color: #4486d1;
+  color: var(--link-color-light);
+}
+/* end section: element class attribute variables assignment */
+
+
+/* section: Advanced CSS styling */
+/* section: responsive grid and header adjustments
+  for smaller screen sizes using media queries */
+  @media all and (max-width: 480px)
+  { .project-list__item:last-child { grid-column: auto / auto; } }
+  /* 2 to a 1-column grid */
+  @media all and (max-width: 500px)
+  { .project-list { -ms-grid-columns: 1fr; grid-template-columns: 1fr; } }
+  /* 3 to a 2-column grid in  shared code (min to max) */
+  @media all and (min-width: 500px) and (max-width: 750px)
+  { .project-list { -ms-grid-columns: 1fr 15px 1fr; grid-template-columns: 1fr 1fr; } }
+  /* section: home/index page profile & image */
+    /* stacking image over text for smaller screens */
+    @media all and (max-width: 700px) {
+      .profile__portrait {
+        text-align: center;
+        float: none;
+        margin: auto;
+      }
+      .profile {
+        clear: both;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        min-width: auto;
+        margin: auto;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content; /* keep button from stretching */
+      }
+    }
+  /* end section: home/index page profile & image */
+  @media all and (max-width: 750px) {
+    .project-list { grid-gap: 10px; } /* reduce item-distance */
+    h1 { font-size: 22px; } /* reducing heading 1 from default */
+  }
+/* end section: responsive grid and header adjustments */
+/* section: SVG animation */  
+  svg * {
+    transform-box: fill-box;
+    /* constants: */
+    --animation-duration: 5s;
+    --animation-step: calc(var(--animation-duration) / (83 - 49)); /* transistionSrfs */
+  }
+  @-webkit-keyframes fade {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    } /* adjusted to maintain the image */
+    50% {
+      opacity: 1;
+      stroke-opacity:10;
+    } /* using global parameter set in the beginning for consistency */
+    100% {
+      opacity: initial;
+      stroke-opacity:initial;
+      enable-background: initial;
+    } 
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    } /* adjusted to maintain the image */
+    50% {
+      opacity: 1;
+      stroke-opacity:10;
+    } /* using global parameter set in the beginning for consistency */
+    100% {
+      opacity: initial;
+      stroke-opacity:initial;
+      enable-background: initial;
+    } 
+  }
+  /* .transistionSrfs */
+  .st549
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st550
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st551
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st552
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st553
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st554
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st555
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st556
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st557
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st558
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st559
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st560
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st561
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st562
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st563
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st564
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st565
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st566
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st567
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st568
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st569
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st570
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st571
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st572
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st573
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st574
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st575
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st576
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st577
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st578
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st579
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st580
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st581
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  .st582
+  {
+    -webkit-animation: undefined;
+            animation: undefined;
+    -webkit-animation: fade var(--animation-duration) infinite;
+            animation: fade var(--animation-duration) infinite; 
+    /* resetting here */
+  }
+  /* iterative highlighting of the 'id="transistionSrfs"' */
+  .st549 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: var(--animation-step); animation-delay: var(--animation-step); }
+  .st550 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(2 * var(--animation-step)); animation-delay: calc(2 * var(--animation-step)); }
+  .st551 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(3 * var(--animation-step)); animation-delay: calc(3 * var(--animation-step)); }
+  .st552 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(4 * var(--animation-step)); animation-delay: calc(4 * var(--animation-step)); }
+  .st553 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(5 * var(--animation-step)); animation-delay: calc(5 * var(--animation-step)); }
+  .st554 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(6 * var(--animation-step)); animation-delay: calc(6 * var(--animation-step)); }
+  .st555 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(7 * var(--animation-step)); animation-delay: calc(7 * var(--animation-step)); }
+  .st556 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(8 * var(--animation-step)); animation-delay: calc(8 * var(--animation-step)); }
+  .st557 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(9 * var(--animation-step)); animation-delay: calc(9 * var(--animation-step)); }
+  .st558 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(10 * var(--animation-step)); animation-delay: calc(10 * var(--animation-step)); }
+  .st559 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(11 * var(--animation-step)); animation-delay: calc(11 * var(--animation-step)); }
+  .st560 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(12 * var(--animation-step)); animation-delay: calc(12 * var(--animation-step)); }
+  .st561 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(13 * var(--animation-step)); animation-delay: calc(13 * var(--animation-step)); }
+  .st562 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(14 * var(--animation-step)); animation-delay: calc(14 * var(--animation-step)); }
+  .st563 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(15 * var(--animation-step)); animation-delay: calc(15 * var(--animation-step)); }
+  .st564 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(16 * var(--animation-step)); animation-delay: calc(16 * var(--animation-step)); }
+  .st565 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(17 * var(--animation-step)); animation-delay: calc(17 * var(--animation-step)); }
+  .st566 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(18 * var(--animation-step)); animation-delay: calc(18 * var(--animation-step)); }
+  .st567 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(19 * var(--animation-step)); animation-delay: calc(19 * var(--animation-step)); }
+  .st568 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(20 * var(--animation-step)); animation-delay: calc(20 * var(--animation-step)); }
+  .st569 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(21 * var(--animation-step)); animation-delay: calc(21 * var(--animation-step)); }
+  .st570 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(22 * var(--animation-step)); animation-delay: calc(22 * var(--animation-step)); }
+  .st571 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(23 * var(--animation-step)); animation-delay: calc(23 * var(--animation-step)); }
+  .st572 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(24 * var(--animation-step)); animation-delay: calc(24 * var(--animation-step)); }
+  .st573 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(25 * var(--animation-step)); animation-delay: calc(25 * var(--animation-step)); }
+  .st574 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(26 * var(--animation-step)); animation-delay: calc(26 * var(--animation-step)); }
+  .st575 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(27 * var(--animation-step)); animation-delay: calc(27 * var(--animation-step)); }
+  .st576 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(28 * var(--animation-step)); animation-delay: calc(28 * var(--animation-step)); }
+  .st577 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(29 * var(--animation-step)); animation-delay: calc(29 * var(--animation-step)); }
+  .st578 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(30 * var(--animation-step)); animation-delay: calc(30 * var(--animation-step)); }
+  .st579 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(31 * var(--animation-step)); animation-delay: calc(31 * var(--animation-step)); }
+  .st580 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(32 * var(--animation-step)); animation-delay: calc(32 * var(--animation-step)); }
+  .st581 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(33 * var(--animation-step)); animation-delay: calc(33 * var(--animation-step)); }
+  .st582 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(34 * var(--animation-step)); animation-delay: calc(34 * var(--animation-step)); }
+  .st583 { -webkit-animation-delay: 5s; animation-delay: 5s }
+/* end section: SVG animation */
+/* end section: Advanced CSS styling */
