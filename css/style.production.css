@@ -75,8 +75,8 @@
     color: var(--links);
   }
   a:visited {
-    color: undefined;
-    color: var(--links-visited);
+    color:  #7728b0e9;
+    color: var(--text-color);
   }
   a:hover,
   a:focus {
@@ -95,6 +95,7 @@
     display: flex;
     width: 100%;
     padding: 20px;
+    margin: 10px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -105,16 +106,16 @@
             flex: 0 1 200px;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
+            align-items: end;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;
+            justify-content: end;
   }
   .page-header__item:last-child {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    text-align: right;
+    text-align: end;
   }
   .page-footer {
     clear: both;
@@ -301,6 +302,7 @@
 /* section: element class attribute variables assignment */
 .color-scheme-wrapper {
   min-height: 100vh;
+  width:inherit;
   background-color: #e7e7e7da;
   background-color: var(--background);
   background: #e7e7e7da;
@@ -319,13 +321,13 @@
   color: var(--accent);
 }
 .icon {
-  -webkit-filter: undefined;
-          filter: undefined;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
   -webkit-filter: var(--filter);
           filter: var(--filter);
 }
 .switch{
-  color: undefined;
+  color: #0f1132;
   color: var(--switch-color);
 }
 .navigation-list__item--active {
@@ -345,394 +347,429 @@ a.project-link:link{
 
 
 /* section: Advanced CSS styling */
-/* section: responsive grid and header adjustments
-  for smaller screen sizes using media queries */
-  @media all and (max-width: 480px)
-  { .project-list__item:last-child { grid-column: auto / auto; } }
-  /* 2 to a 1-column grid */
-  @media all and (max-width: 500px)
-  { .project-list { -ms-grid-columns: 1fr; grid-template-columns: 1fr; } }
-  /* 3 to a 2-column grid in  shared code (min to max) */
-  @media all and (min-width: 500px) and (max-width: 750px)
-  { .project-list { -ms-grid-columns: 1fr 15px 1fr; grid-template-columns: 1fr 1fr; } }
-  /* section: home/index page profile & image */
-    /* stacking image over text for smaller screens */
-    @media all and (max-width: 700px) {
-      .profile__portrait {
-        text-align: center;
-        float: none;
-        margin: auto;
-      }
-      .profile {
-        clear: both;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        text-align: center;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        min-width: auto;
-        margin: auto;
-        max-width: -webkit-fit-content;
-        max-width: -moz-fit-content;
-        max-width: fit-content; /* keep button from stretching */
+  /* section: responsive grid and header adjustments
+    for smaller screen sizes using media queries */
+    @media all and (max-width: 376px)
+    {
+      .color-scheme-wrapper {
+        max-width:max-content;
       }
     }
-  /* end section: home/index page profile & image */
-  @media all and (max-width: 750px) {
-    .project-list { grid-gap: 10px; } /* reduce item-distance */
-    h1 { font-size: 22px; } /* reducing heading 1 from default */
-  }
-/* end section: responsive grid and header adjustments */
-/* section: SVG animation */  
-  svg * {
-    transform-box: fill-box;
-    /* constants: */
-    --animation-duration: 5s;
-    --animation-step: calc(var(--animation-duration) / (83 - 49)); /* transistionSrfs */
-  }
-  @-webkit-keyframes fade {
-    0% {
-      opacity: 0;
-      visibility: hidden;
-    } /* adjusted to maintain the image */
-    50% {
-      opacity: 1;
-      stroke-opacity:10;
-    } /* using global parameter set in the beginning for consistency */
-    100% {
-      opacity: initial;
-      stroke-opacity:initial;
-      enable-background: initial;
-    } 
-  }
-  @keyframes fade {
-    0% {
-      opacity: 0;
-      visibility: hidden;
-    } /* adjusted to maintain the image */
-    50% {
-      opacity: 1;
-      stroke-opacity:10;
-    } /* using global parameter set in the beginning for consistency */
-    100% {
-      opacity: initial;
-      stroke-opacity:initial;
-      enable-background: initial;
-    } 
-  }
+      @media all and (max-width: 480px)
+    {
+      .main-navigation {
+        margin-left: 0px;
+      }
+      .navigation-list{
+        display: inline-block;
+        margin: 0px;
+        padding-left: 0px;
+        padding-right: 15px; /* Iphone7 */
+      }
+      .navigation-list {      
+      margin-left: 0px;
+      }
+      .project-list__item:last-child { grid-column: auto / auto; }
+      .page-header {
+        padding: 0px; /* Iphone7 */
+      }
+      .page-header__item {
+        padding: 15px;  /* Iphone7 */
+      }
+    }
+
+    /* 2 to a 1-column grid */
+    @media all and (max-width: 500px)
+    { 
+      .project-list { -ms-grid-columns: 1fr; grid-template-columns: 1fr; } 
+      .page-header__item {
+        flex-basis: 100px;
+      }
+    }
+    /* 3 to a 2-column grid in  shared code (min to max) */
+    @media all and (min-width: 500px) and (max-width: 750px)
+    { .project-list { -ms-grid-columns: 1fr 15px 1fr; grid-template-columns: 1fr 1fr; } }
+    /* section: home/index page profile & image */
+      /* stacking image over text for smaller screens */
+      @media all and (max-width: 700px) {
+        .page-header__item {
+          flex-basis: 150px;
+        }
+        .profile__portrait {
+          text-align: center;
+          float: none;
+          margin: auto;
+        }
+        .profile {
+          clear: both;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          text-align: center;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          min-width: auto;
+          margin: auto;
+          max-width: -webkit-fit-content;
+          max-width: -moz-fit-content;
+          max-width: fit-content; /* keep button from stretching */
+        }
+      }
+    /* end section: home/index page profile & image */
+    @media all and (max-width: 750px) {
+      .project-list { grid-gap: 10px; } /* reduce item-distance */
+      h1 { font-size: 22px; } /* reducing heading 1 from default */
+    }
+  /* end section: responsive grid and header adjustments */
+  /* section: SVG animation */  
+    svg * {
+      transform-box: fill-box;
+      /* constants: */
+      --animation-duration: 5s;
+      --animation-step: calc(var(--animation-duration) / (83 - 49)); /* transistionSrfs */
+    }
+    @-webkit-keyframes fade {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+      } /* adjusted to maintain the image */
+      50% {
+        opacity: 1;
+        stroke-opacity:10;
+      } /* using global parameter set in the beginning for consistency */
+      100% {
+        opacity: initial;
+        stroke-opacity:initial;
+        enable-background: initial;
+      } 
+    }
+    @keyframes fade {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+      } /* adjusted to maintain the image */
+      50% {
+        opacity: 1;
+        stroke-opacity:10;
+      } /* using global parameter set in the beginning for consistency */
+      100% {
+        opacity: initial;
+        stroke-opacity:initial;
+        enable-background: initial;
+      } 
+    }
   /* .transistionSrfs */
-  .st549
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st550
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st551
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st552
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st553
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st554
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st555
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st556
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st557
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st558
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st559
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st560
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st561
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st562
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st563
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st564
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st565
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st566
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st567
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st568
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st569
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st570
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st571
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st572
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st573
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st574
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st575
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st576
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st577
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st578
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st579
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st580
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st581
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
-  .st582
-  {
-    -webkit-animation: undefined;
-            animation: undefined;
-    -webkit-animation: fade var(--animation-duration) infinite;
-            animation: fade var(--animation-duration) infinite; 
-    /* resetting here */
-  }
+    .st549
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st550
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st551
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st552
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st553
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st554
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st555
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st556
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st557
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st558
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st559
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st560
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st561
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st562
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st563
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st564
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st565
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st566
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st567
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st568
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st569
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st570
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st571
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st572
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st573
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st574
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st575
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st576
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st577
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st578
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st579
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st580
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st581
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
+    .st582
+    {
+      -webkit-animation: undefined;
+              animation: undefined;
+      -webkit-animation: fade var(--animation-duration) infinite;
+              animation: fade var(--animation-duration) infinite; 
+      /* resetting here */
+    }
   /* iterative highlighting of the 'id="transistionSrfs"' */
-  .st549 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: var(--animation-step); animation-delay: var(--animation-step); }
-  .st550 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(2 * var(--animation-step)); animation-delay: calc(2 * var(--animation-step)); }
-  .st551 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(3 * var(--animation-step)); animation-delay: calc(3 * var(--animation-step)); }
-  .st552 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(4 * var(--animation-step)); animation-delay: calc(4 * var(--animation-step)); }
-  .st553 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(5 * var(--animation-step)); animation-delay: calc(5 * var(--animation-step)); }
-  .st554 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(6 * var(--animation-step)); animation-delay: calc(6 * var(--animation-step)); }
-  .st555 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(7 * var(--animation-step)); animation-delay: calc(7 * var(--animation-step)); }
-  .st556 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(8 * var(--animation-step)); animation-delay: calc(8 * var(--animation-step)); }
-  .st557 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(9 * var(--animation-step)); animation-delay: calc(9 * var(--animation-step)); }
-  .st558 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(10 * var(--animation-step)); animation-delay: calc(10 * var(--animation-step)); }
-  .st559 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(11 * var(--animation-step)); animation-delay: calc(11 * var(--animation-step)); }
-  .st560 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(12 * var(--animation-step)); animation-delay: calc(12 * var(--animation-step)); }
-  .st561 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(13 * var(--animation-step)); animation-delay: calc(13 * var(--animation-step)); }
-  .st562 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(14 * var(--animation-step)); animation-delay: calc(14 * var(--animation-step)); }
-  .st563 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(15 * var(--animation-step)); animation-delay: calc(15 * var(--animation-step)); }
-  .st564 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(16 * var(--animation-step)); animation-delay: calc(16 * var(--animation-step)); }
-  .st565 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(17 * var(--animation-step)); animation-delay: calc(17 * var(--animation-step)); }
-  .st566 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(18 * var(--animation-step)); animation-delay: calc(18 * var(--animation-step)); }
-  .st567 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(19 * var(--animation-step)); animation-delay: calc(19 * var(--animation-step)); }
-  .st568 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(20 * var(--animation-step)); animation-delay: calc(20 * var(--animation-step)); }
-  .st569 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(21 * var(--animation-step)); animation-delay: calc(21 * var(--animation-step)); }
-  .st570 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(22 * var(--animation-step)); animation-delay: calc(22 * var(--animation-step)); }
-  .st571 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(23 * var(--animation-step)); animation-delay: calc(23 * var(--animation-step)); }
-  .st572 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(24 * var(--animation-step)); animation-delay: calc(24 * var(--animation-step)); }
-  .st573 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(25 * var(--animation-step)); animation-delay: calc(25 * var(--animation-step)); }
-  .st574 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(26 * var(--animation-step)); animation-delay: calc(26 * var(--animation-step)); }
-  .st575 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(27 * var(--animation-step)); animation-delay: calc(27 * var(--animation-step)); }
-  .st576 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(28 * var(--animation-step)); animation-delay: calc(28 * var(--animation-step)); }
-  .st577 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(29 * var(--animation-step)); animation-delay: calc(29 * var(--animation-step)); }
-  .st578 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(30 * var(--animation-step)); animation-delay: calc(30 * var(--animation-step)); }
-  .st579 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(31 * var(--animation-step)); animation-delay: calc(31 * var(--animation-step)); }
-  .st580 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(32 * var(--animation-step)); animation-delay: calc(32 * var(--animation-step)); }
-  .st581 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(33 * var(--animation-step)); animation-delay: calc(33 * var(--animation-step)); }
-  .st582 { -webkit-animation-delay: undefined; animation-delay: undefined; -webkit-animation-delay: calc(34 * var(--animation-step)); animation-delay: calc(34 * var(--animation-step)); }
-  .st583 { -webkit-animation-delay: 5s; animation-delay: 5s }
-/* end section: SVG animation */
+    .st549 { -webkit-animation-delay: 0s; animation-delay: 0s; -webkit-animation-delay: var(--animation-step); animation-delay: var(--animation-step); }
+    .st550 { -webkit-animation-delay: 0.147059s; animation-delay: 0.147059s; -webkit-animation-delay: calc(2 * var(--animation-step)); animation-delay: calc(2 * var(--animation-step)); }
+    .st551 { -webkit-animation-delay: 0.294118s; animation-delay: 0.294118s; -webkit-animation-delay: calc(3 * var(--animation-step)); animation-delay: calc(3 * var(--animation-step)); }
+    .st552 { -webkit-animation-delay: 0.441176s; animation-delay: 0.441176s; -webkit-animation-delay: calc(4 * var(--animation-step)); animation-delay: calc(4 * var(--animation-step)); }
+    .st553 { -webkit-animation-delay: 0.588235s; animation-delay: 0.588235s; -webkit-animation-delay: calc(5 * var(--animation-step)); animation-delay: calc(5 * var(--animation-step)); }
+    .st554 { -webkit-animation-delay: 0.735294s; animation-delay: 0.735294s; -webkit-animation-delay: calc(6 * var(--animation-step)); animation-delay: calc(6 * var(--animation-step)); }
+    .st555 { -webkit-animation-delay: 0.882353s; animation-delay: 0.882353s; -webkit-animation-delay: calc(7 * var(--animation-step)); animation-delay: calc(7 * var(--animation-step)); }
+    .st556 { -webkit-animation-delay: 1.029412s; animation-delay: 1.029412s; -webkit-animation-delay: calc(8 * var(--animation-step)); animation-delay: calc(8 * var(--animation-step)); }
+    .st557 { -webkit-animation-delay: 1.176471s; animation-delay: 1.176471s; -webkit-animation-delay: calc(9 * var(--animation-step)); animation-delay: calc(9 * var(--animation-step)); }
+    .st558 { -webkit-animation-delay: 1.323529s; animation-delay: 1.323529s; -webkit-animation-delay: calc(10 * var(--animation-step)); animation-delay: calc(10 * var(--animation-step)); }
+    .st559 { -webkit-animation-delay: 1.470588s; animation-delay: 1.470588s; -webkit-animation-delay: calc(11 * var(--animation-step)); animation-delay: calc(11 * var(--animation-step)); }
+    .st560 { -webkit-animation-delay: 1.617647s; animation-delay: 1.617647s; -webkit-animation-delay: calc(12 * var(--animation-step)); animation-delay: calc(12 * var(--animation-step)); }
+    .st561 { -webkit-animation-delay: 1.764706s; animation-delay: 1.764706s; -webkit-animation-delay: calc(13 * var(--animation-step)); animation-delay: calc(13 * var(--animation-step)); }
+    .st562 { -webkit-animation-delay: 1.911765s; animation-delay: 1.911765s; -webkit-animation-delay: calc(14 * var(--animation-step)); animation-delay: calc(14 * var(--animation-step)); }
+    .st563 { -webkit-animation-delay: 2.058824s; animation-delay: 2.058824s; -webkit-animation-delay: calc(15 * var(--animation-step)); animation-delay: calc(15 * var(--animation-step)); }
+    .st564 { -webkit-animation-delay: 2.205882s; animation-delay: 2.205882s; -webkit-animation-delay: calc(16 * var(--animation-step)); animation-delay: calc(16 * var(--animation-step)); }
+    .st565 { -webkit-animation-delay: 2.352941s; animation-delay: 2.352941s; -webkit-animation-delay: calc(17 * var(--animation-step)); animation-delay: calc(17 * var(--animation-step)); }
+    .st566 { -webkit-animation-delay: 2.5s; animation-delay: 2.5s; -webkit-animation-delay: calc(18 * var(--animation-step)); animation-delay: calc(18 * var(--animation-step)); }
+    .st567 { -webkit-animation-delay: 2.647059s; animation-delay: 2.647059s; -webkit-animation-delay: calc(19 * var(--animation-step)); animation-delay: calc(19 * var(--animation-step)); }
+    .st568 { -webkit-animation-delay: 2.794118s; animation-delay: 2.794118s; -webkit-animation-delay: calc(20 * var(--animation-step)); animation-delay: calc(20 * var(--animation-step)); }
+    .st569 { -webkit-animation-delay: 2.941176s; animation-delay: 2.941176s; -webkit-animation-delay: calc(21 * var(--animation-step)); animation-delay: calc(21 * var(--animation-step)); }
+    .st570 { -webkit-animation-delay: 3.088235s; animation-delay: 3.088235s; -webkit-animation-delay: calc(22 * var(--animation-step)); animation-delay: calc(22 * var(--animation-step)); }
+    .st571 { -webkit-animation-delay: 3.235294s; animation-delay: 3.235294s; -webkit-animation-delay: calc(23 * var(--animation-step)); animation-delay: calc(23 * var(--animation-step)); }
+    .st572 { -webkit-animation-delay: 3.382353s; animation-delay: 3.382353s; -webkit-animation-delay: calc(24 * var(--animation-step)); animation-delay: calc(24 * var(--animation-step)); }
+    .st573 { -webkit-animation-delay: 3.529412s; animation-delay: 3.529412s; -webkit-animation-delay: calc(25 * var(--animation-step)); animation-delay: calc(25 * var(--animation-step)); }
+    .st574 { -webkit-animation-delay: 3.676471s; animation-delay: 3.676471s; -webkit-animation-delay: calc(26 * var(--animation-step)); animation-delay: calc(26 * var(--animation-step)); }
+    .st575 { -webkit-animation-delay: 3.823529s; animation-delay: 3.823529s; -webkit-animation-delay: calc(27 * var(--animation-step)); animation-delay: calc(27 * var(--animation-step)); }
+    .st576 { -webkit-animation-delay: 3.970588s; animation-delay: 3.970588s; -webkit-animation-delay: calc(28 * var(--animation-step)); animation-delay: calc(28 * var(--animation-step)); }
+    .st577 { -webkit-animation-delay: 4.117647s; animation-delay: 4.117647s; -webkit-animation-delay: calc(29 * var(--animation-step)); animation-delay: calc(29 * var(--animation-step)); }
+    .st578 { -webkit-animation-delay: 4.264706s; animation-delay: 4.264706s; -webkit-animation-delay: calc(30 * var(--animation-step)); animation-delay: calc(30 * var(--animation-step)); }
+    .st579 { -webkit-animation-delay: 4.411765s; animation-delay: 4.411765s; -webkit-animation-delay: calc(31 * var(--animation-step)); animation-delay: calc(31 * var(--animation-step)); }
+    .st580 { -webkit-animation-delay: 4.558824s; animation-delay: 4.558824s; -webkit-animation-delay: calc(32 * var(--animation-step)); animation-delay: calc(32 * var(--animation-step)); }
+    .st581 { -webkit-animation-delay: 4.705882s; animation-delay: 4.705882s; -webkit-animation-delay: calc(33 * var(--animation-step)); animation-delay: calc(33 * var(--animation-step)); }
+    .st582 { -webkit-animation-delay: 4.852941s; animation-delay: 4.852941s; -webkit-animation-delay: calc(34 * var(--animation-step)); animation-delay: calc(34 * var(--animation-step)); }
+    .st583 { -webkit-animation-delay: 5s; animation-delay: 5s; }
+  /* end section: SVG animation */
 /* end section: Advanced CSS styling */
