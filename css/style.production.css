@@ -349,14 +349,18 @@ a.project-link:link{
 /* section: Advanced CSS styling */
   /* section: responsive grid and header adjustments
     for smaller screen sizes using media queries */
+    
     @media all and (max-width: 376px)
     {
       .color-scheme-wrapper {
         max-width:max-content;
       }
     }
-      @media all and (max-width: 480px)
+    @media all and (max-width: 480px)
     {
+      h1, h2, h3, p, section, details, a {
+        padding-left: 2px;
+      }
       .main-navigation {
         margin-left: 0px;
       }
@@ -365,9 +369,7 @@ a.project-link:link{
         margin: 0px;
         padding-left: 0px;
         padding-right: 15px; /* Iphone7 */
-      }
-      .navigation-list {      
-      margin-left: 0px;
+        margin-left: 0px;
       }
       .project-list__item:last-child { grid-column: auto / auto; }
       .page-header {
@@ -377,7 +379,6 @@ a.project-link:link{
         padding: 15px;  /* Iphone7 */
       }
     }
-
     /* 2 to a 1-column grid */
     @media all and (max-width: 500px)
     { 
@@ -388,7 +389,12 @@ a.project-link:link{
     }
     /* 3 to a 2-column grid in  shared code (min to max) */
     @media all and (min-width: 500px) and (max-width: 750px)
-    { .project-list { -ms-grid-columns: 1fr 15px 1fr; grid-template-columns: 1fr 1fr; } }
+    {
+      h1, h2, h3, p, section, details, a {
+        padding-left: 10px;
+      }
+      .project-list { -ms-grid-columns: 1fr 15px 1fr; grid-template-columns: 1fr 1fr; }
+    }
     /* section: home/index page profile & image */
       /* stacking image over text for smaller screens */
       @media all and (max-width: 700px) {
