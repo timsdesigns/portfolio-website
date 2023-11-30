@@ -153,6 +153,7 @@
   .profile__portrait {
     float: left;
     width: 250px;
+    height: 250px;
     margin: 0 40px;
     border-radius: 50%;
   }
