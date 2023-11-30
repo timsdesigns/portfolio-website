@@ -13,26 +13,32 @@
  /* section: main constants and variables */
  :root {
   /* constants: */
-  --text-color-light: #BE47FD;
+  --text-color-light: #bd47fd9d;
   --text-color: #7728b0e9;
+  --text-color-button:  rgb(178,207,249);
+  --text-color-button-light: #ffffff;
   --primary-color: #030531;
   --primary-color: #0f1132;
   --secondary-color: #e7e7e7da;
   --lighting-color-dark: #3f8adb;
   --lighting-color: #00fff7b9;
   --link-color: #2a3199;
-  --link-color-light: #4486d1;
+  --link-color-light: #6295cf;
+  --link-visited-light:rgba(173, 147, 192, 0.5);
 
   /* light mode */
   /* variables: */
   --background: var(--secondary-color);
   --color: var(--primary-color);
+  --button-text: var(--secondary-color);
   --accent: var(--text-color);
   --lighting: var(--lighting-color);
+  --lighting-light: var(--text-color);
   --links: var(--link-color);
   --nav-links: var(--lighting-color-dark); 
   --switch: var(--primary-color);
-  --input-color: var(--background);
+  --input-color: var(--background);  
+  --links-visited: var(--lighting-color-dark);
   }
 /* end section */
 /* section: elements */
@@ -71,12 +77,12 @@
 /* end section */
 /* section: element properties */
   a:link {
-    color: #2a3199;
+    color: #6295cf;
     color: var(--links);
   }
   a:visited {
-    color:  #7728b0e9;
-    color: var(--text-color);
+    color:  rgba(173, 147, 192, 0.5);
+    color: var(--links-visited);
   }
   a:hover,
   a:focus {
@@ -164,7 +170,7 @@
     font-family: inherit;
     /* styles the background color, font color, and text decoration (underline, etc.) of the button */
     background-color: #7728b0e9;
-    background-color: var(--text-color);
+    background-color: var(--lighting-light); /*var(--text-color);*/
     color: #e7e7e7da;
     color: var(--secondary-color);
     text-decoration: none;
@@ -189,7 +195,7 @@
     background-color: #7728b0e9;
     background-color: var(--text-color);
     color: #e7e7e7da;
-    color: var(--secondary-color);
+    color: var(--button-text);
     text-decoration: none;
     padding: 10px;
     border-radius: 30px;
@@ -203,13 +209,9 @@
     -webkit-transition-timing-function: cubic-bezier(0, 0.54, 0.4, 0.11);
             transition-timing-function: cubic-bezier(0, 0.54, 0.4, 0.11); /* visual editor in dev-tools ;) */
   }
-  button:visited{
-    color: #e7e7e7da;
-    color: var(--secondary-color)
-  }
-  .button:visited{
-    color: #e7e7e7da;
-    color: var(--secondary-color)
+  button:visited, .button:visited, a.button:visited{
+    color: rgb(178,207,249);
+    color: var(--button-text-visited);
   }
   .button:hover, .button:focus,
   button:hover, button:focus {
@@ -289,10 +291,13 @@
   #switch-input:checked~.color-scheme-wrapper {
     --background: var(--primary-color);
     --color: var(--secondary-color);
+    --button-text: var(--text-color-button-light);
+    --button-text-visited: var(--text-color-button);
     --accent: var(--lighting-color);
-    --lighting: var(--text-color-light);
+    --lighting: var(--text-color-light);    
+    --lighting-light: var(--text-color-light);
     --links: var(--link-color-light);
-    --links-visited: var(--lighting-color-dark);
+    --links-visited: var(--link-visited-light);
     --nav-links: var(--lighting-color); 
     --switch: var(--secondary-color);
     --filter: invert(100%);
@@ -338,10 +343,18 @@
   color: var(--background);
   background: #0f1132;
   background: var(--color);
+  opacity: 90%;
+}
+.project-list__item:hover {
+  opacity:70%;
 }
 a.project-link:link{
   color: #4486d1;
-  color: var(--link-color-light);
+  color: var(--link-color);
+}
+a.project-link:visited{
+  color: #4486d1;
+  color: var(--link-color-dark);
 }
 /* end section: element class attribute variables assignment */
 
