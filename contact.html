@@ -68,6 +68,8 @@
         <h2>Send me a message</h2>
         <form action="/submit-form-action" method="post" enctype="text/plain" autocomplete="on" name="contact"
           id="contact-form" oninput="Math.pow(o.value=parseInt(u.value), 20)">
+          <!-- Call the following from js-function (or within action) to provide feedback that something happened. -->
+          <!-- onclick="alert('Message is on its way.\nLine Thank you for reaching out!')" -->
           <fieldset>
             <fieldset data-form-field="main-info">
               <label class="standard-label" for="name">Enter Your Name</label><br>
@@ -94,8 +96,7 @@
                 <label class="standard-label" for="u">Urgency:</label><br>
                 <input id="u" type="range" name="urgency">
                 <output class="importance-label" name="o" for="u" id="output">50</output>%
-                <button type="submit" value="Submit"
-                  onclick="alert('Message is on its way.\nLine Thank you for reaching out!')">
+                <button type="submit" value="Submit">
                   Submit
                 </button>
               </fieldset>
