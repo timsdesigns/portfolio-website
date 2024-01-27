@@ -40,7 +40,7 @@
   --input-color: var(--background);  
   --links-visited: var(--lighting-color-dark);
   }
-/* end section */
+/* end section main constants and variables */
 /* section: elements */
   * {
     -webkit-box-sizing: border-box;
@@ -74,7 +74,7 @@
   table{
     font-size: 12px;
   }
-/* end section */
+/* end section elements */
 /* section: element properties */
   a:link {
     color: #6295cf;
@@ -92,7 +92,7 @@
     color: #00fff7b9;
     color: var(--lighting);
   }
-/* end section */
+/* end section element properties */
 /* section: classes */
 /* section: page */
   .page-header {
@@ -134,7 +134,7 @@
             flex-direction: column;
     text-align: center;
   }
-/* end section */
+/* end section page */
 /* section: nav */
   .navigation__logo {
     position: relative;
@@ -147,7 +147,7 @@
     display: inline-block;
     margin-left: 15px;
   }
-/* end section */
+/* end section nav */
 /* section inputs */
   input {
     background: #0f1132;
@@ -160,6 +160,13 @@
   select {
     background: #0f1132;
     background: var(--input-color);
+  }
+  #subject > #option-placeholder{
+    color: var(--secondary-color);
+  }
+  .error-message {
+    color: #ce6464;
+    font-size: 0.8em;
   }
 /* end section */
 /* buttons in and outside of forms */

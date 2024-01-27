@@ -12,6 +12,7 @@
     "Bootcamps",
     "CIEE",
     "DATEV",
+    "endregion",
     "Esselunga",
     "EVOLO",
     "HOAI",
@@ -27,5 +28,6 @@
     "transistion",
     "Treptow",
     "Zitadelle"
-  ]
+  ],
+  "liveServer.settings.port": 5502
 }
